@@ -22,6 +22,14 @@ app.get('/',function(req,res){
     ])
 })
 
+app.get('/test',function(req,res){
+    res.send([
+        {
+            message:"Successfully Done"
+        }
+    ])
+})
+
 app.listen(3000,()=>{
     console.log(chalk.bgYellow("Running on port 3000"))
 })
