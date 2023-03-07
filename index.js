@@ -1,34 +1,15 @@
 const express = require("express")
 const app = express()
 const chalk=require("chalk");
+const cors = require("cors")
+const userRouter = require("./routes/usersRouter")
 
-app.get('/',function(req,res){
-    res.send([
-        {
-            name:"Robiul Islam"
-        },
-        {
-            name:"Anik Hasan"
-        },
-        {
-            name:"Rakib Hasan"
-        },
-        {
-            name:"Khalid Hasan"
-        },
-        {
-            name:"Sofiqul Islam"
-        }
-    ])
-})
+//midleware....
+app.use(express.urlencoded({extended:true}))
+app.use(express.json)
+app.use(cors())
 
-app.get('/test',function(req,res){
-    res.send([
-        {
-            message:"Successfully Done"
-        }
-    ])
-})
+app.use('/',userRouter)
 
 app.listen(3000,()=>{
     console.log(chalk.bgYellow("Running on port 3000"))
