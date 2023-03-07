@@ -3,7 +3,23 @@ const app = express()
 const chalk=require("chalk");
 
 app.get('/',function(req,res){
-    res.send("Hellow Local Host Here!")
+    res.send([
+        {
+            name:"Robiul Islam"
+        },
+        {
+            name:"Anik Hasan"
+        },
+        {
+            name:"Rakib Hasan"
+        },
+        {
+            name:"Khalid Hasan"
+        },
+        {
+            name:"Sofiqul Islam"
+        }
+    ])
 })
 
 app.listen(3000,()=>{
