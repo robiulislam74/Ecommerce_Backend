@@ -1,6 +1,6 @@
 const express = require("express")
 const _ = express.Router()
-const registration = require('./auth')
+const authRoutes = require('./auth')
 
-_.use('/auth',registration)
+_.use('/auth',authRoutes)
 module.exports=_;
