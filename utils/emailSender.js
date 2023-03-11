@@ -13,7 +13,7 @@ exports.sendEmailVerification=(email,name,token)=>{
         from: process.env.EMAIL,
         to: email,
         subject: "Email Verification Link Provide by Ecommerce",
-        text: "Hello"`${name}`, 
+        text: "Hello", 
         html: `${token}`, 
       };
 
