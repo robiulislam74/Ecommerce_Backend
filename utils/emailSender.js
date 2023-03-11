@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 exports.sendEmailVerification=(email,name,token)=>{
     let transporter = nodemailer.createTransport({
-        service:"email",
+        service:"gmail",
         auth: {
           user: process.env.EMAIL,
           pass: "hbuekvnnroanyhuu",
