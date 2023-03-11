@@ -4,7 +4,7 @@ const User = require('../../model/userSchema.js')
 
 _.get('/registration',(req,res)=>{
      const {email,phone,firstName,lastName,password}=req.body
-
+   console.log(req.body)
      if(!firstName){
         return res.send("Err: Please enter your firstName!")
      }
