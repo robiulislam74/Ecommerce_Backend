@@ -25,7 +25,7 @@ const userSchema = new schema({
         default: false,
     },
     merchant:{
-        type: schema.types.objectId,
+        type:mongoose.Types.ObjectId,
         default: null,
         ref:"merchant",
     },
