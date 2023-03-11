@@ -2,6 +2,7 @@ const express = require("express")
 const _ = express.Router()
 const User = require('../../model/userSchema.js')
 var jwt = require('jsonwebtoken');
+const { sendEmailVerification } = require("../../utils/emailSender.js");
 
 _.get('/registration',(req,res)=>{
      const {email,phone,firstName,lastName,password}=req.body
@@ -30,7 +31,9 @@ _.get('/registration',(req,res)=>{
       password,
      })
      user.save();
-     var token = jwt.sign({ email:user.email}, "&Y6!q+u,pHuLO9", { expiresIn:"1h" });
+     const fullName = user.firstName+user.lastName;
+     const token = jwt.sign({ email:user.email}, "&Y6!q+u,pHuLO9", { expiresIn:"1h" });
+     sendEmailVerification(email,fullName,token)
      res.send(token)
 })
 
