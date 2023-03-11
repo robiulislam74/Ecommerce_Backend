@@ -25,7 +25,7 @@ const userSchema = new schema({
         default: false,
     },
     merchant:{
-        type: schema.type.objectId,
+        type: schema.types.objectId,
         default: null,
         ref:"merchant",
     },
