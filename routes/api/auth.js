@@ -32,6 +32,7 @@ _.get('/registration',(req,res)=>{
      })
      user.save();
      const fullName = user.firstName+user.lastName;
+     
      const token = jwt.sign({ email:user.email}, "&Y6!q+u,pHuLO9", { expiresIn:"1h" });
      sendEmailVerification(email,fullName,token)
      res.send(token)
