@@ -17,13 +17,16 @@ _.get('/registration',(req,res)=>{
      if(!phone){
         return res.send("Err: Please enter your phoneNumber!")
      }
+     if(!password){
+        return res.send("Err: Please enter your password!")
+     }
 
      const user = new User({
       email,
       phone,
       firstName,
       lastName,
-      password
+      password,
      })
      user.save();
 
