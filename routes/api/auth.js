@@ -6,7 +6,7 @@ const { sendEmailVerification } = require("../../utils/emailSender.js");
 
 _.get('/registration',(req,res)=>{
      const {email,phone,firstName,lastName,password}=req.body
-     
+
      if(!firstName){
         return res.send("Err: Please enter your firstName!")
      }
@@ -31,7 +31,7 @@ _.get('/registration',(req,res)=>{
       password,
      })
      user.save();
-     const fullName = user.firstName+user.lastName;
+     const fullName = user.firstName + user.lastName;
      
      const token = jwt.sign({ email:user.email}, "&Y6!q+u,pHuLO9", { expiresIn:"1h" });
      sendEmailVerification(user.email,fullName,token)
