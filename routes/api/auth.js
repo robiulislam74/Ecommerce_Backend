@@ -1,8 +1,9 @@
 const express = require("express")
 const _ = express.Router()
+const User = require('../../model/userSchema.js')
 
 _.get('/registration',(req,res)=>{
-     const {fullName,email,phone}=req.body
+     const {email,phone,firstName,lastName,password}=req.body
 
      if(!fullName){
         return res.send("Err: Please enter your FullName!")
@@ -14,7 +15,16 @@ _.get('/registration',(req,res)=>{
         return res.send("Err: Please enter your phoneNumber!")
      }
 
-     res.send(req.body)
+     const user = new User({
+      email,
+      phone,
+      firstName,
+      lastName,
+      password
+     })
+     user.save();
+
+     res.send(user)
 })
 
 module.exports= _;
