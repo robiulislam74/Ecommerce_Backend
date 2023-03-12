@@ -14,7 +14,7 @@ exports.sendEmailVerification=(email,name,token)=>{
         to: email,
         subject: "Email Verification Link Provide by Ecommerce",
         text: "Hello", 
-        html: `${token}`, 
+        html: "Hello ffg fg fgfd", 
       };
 
       transporter.sendMail(info,(err,res)=>{
