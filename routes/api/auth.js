@@ -35,7 +35,7 @@ _.post('/registration',(req,res)=>{
      const fullName = user.firstName + user.lastName;
      const token = jwt.sign({ email:user.email}, "&Y6!q+u,pHuLO9", { expiresIn:"1h" });
      sendEmailVerification(user.email,fullName,token)
-     res.send(token)
+     res.send(user.email)
 })
 
 module.exports= _;
