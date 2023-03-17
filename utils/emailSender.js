@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-exports.sendEmailVerification=(email,name,token)=>{
+const sendEmailVerification=(email,name,token)=>{
     let transporter = nodemailer.createTransport({
         service:"gmail",
         auth: {
@@ -14,7 +14,7 @@ exports.sendEmailVerification=(email,name,token)=>{
         to: email,
         subject: "Email Verification Link Provide by Ecommerce",
         text: "Hello", 
-        html: "Hello ffg fg fgfd", 
+        html: "<b>Hello world?</b>", 
       };
 
       transporter.sendMail(info,(err,res)=>{
@@ -22,3 +22,5 @@ exports.sendEmailVerification=(email,name,token)=>{
         return res;
       })
 }
+
+module.exports=sendEmailVerification;
