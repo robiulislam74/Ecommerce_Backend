@@ -4,7 +4,7 @@ const User = require('../../model/userSchema.js')
 var jwt = require('jsonwebtoken');
 const { sendEmailVerification } = require("../../utils/emailSender.js");
 
-_.get('/registration',(req,res)=>{
+_.post('/registration',(req,res)=>{
      const {email,phone,firstName,lastName,password}=req.body
 
      if(!firstName){
