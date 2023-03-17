@@ -5,7 +5,7 @@ exports.sendEmailVerification=(email,name,token)=>{
         service:"gmail",
         auth: {
           user: process.env.EMAIL,
-          pass: "hbuekvnnroanyhuu",
+          pass: "dvyyqwzwwjyaznmw",
         },
       });
 
@@ -14,7 +14,7 @@ exports.sendEmailVerification=(email,name,token)=>{
         to: email,
         subject: "Email Verification Link Provide by Ecommerce",
         text: "Hello", 
-        html: `${token}`, 
+        html: "<b>Hello world?</b>", 
       };
 
       transporter.sendMail(info,(err,res)=>{
