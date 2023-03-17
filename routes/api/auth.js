@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 const { sendEmailVerification } = require("../../utils/emailSender.js");
 
 _.post('/registration',(req,res)=>{
-     const {email,phone,firstName,lastName,password}=req.body
+     const {email,phone,firstName,lastName,password}=req.body;
 
      if(!firstName){
         return res.send("Err: Please enter your firstName!")
